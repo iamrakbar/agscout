@@ -61,7 +61,7 @@ export default function AppLayout() {
                     ),
                     headerRight: () => (
                         <Pressable>
-                            <Feather name="filter" size={24} color={colors.gray[500]} />
+                            <Ionicons name="filter" size={24} color={colors.gray[500]} />
                         </Pressable>
                     )
                 }}
