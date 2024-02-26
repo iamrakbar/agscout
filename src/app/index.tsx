@@ -1,95 +1,70 @@
-import { Link } from "expo-router";
-import React from "react";
-import { Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Screen from '@/components/screen';
+import { Button, Image, Keyboard, KeyboardAvoidingView, Pressable, ScrollView, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
+import { Feather, Ionicons } from '@expo/vector-icons';
+import colors from 'tailwindcss/colors';
+import { Link } from 'expo-router';
 
 export default function Page() {
-  return (
-    <View className="flex flex-1">
-      <Header />
-      <Content />
-      <Footer />
-    </View>
-  );
-}
+    return (
+        <Screen>
+            <TouchableWithoutFeedback
+                onPress={() => Keyboard.dismiss()}>
 
-function Content() {
-  return (
-    <View className="flex-1">
-      <View className="py-12 md:py-24 lg:py-32 xl:py-48">
-        <View className="container px-4 md:px-6">
-          <View className="flex flex-col items-center gap-4 text-center">
-            <Text
-              role="heading"
-              className="text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
-            >
-              Welcome to Project ACME
-            </Text>
-            <Text className="mx-auto max-w-[700px] text-lg text-center text-gray-500 md:text-xl dark:text-gray-400">
-              Discover and collaborate on amce. Explore our services now.
-            </Text>
-
-            <View className="gap-4">
-              <Link
-                suppressHighlighting
-                className="flex h-9 items-center justify-center overflow-hidden rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 active:bg-gray-400/90 web:focus-visible:outline-none web:focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="#"
-              >
-                Explore
-              </Link>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  );
-}
-
-function Header() {
-  const { top } = useSafeAreaInsets();
-  return (
-    <View style={{ paddingTop: top }}>
-      <View className="px-4 lg:px-6 h-14 flex items-center flex-row justify-between ">
-        <Link className="font-bold flex-1 items-center justify-center" href="#">
-          ACME
-        </Link>
-        <View className="flex flex-row gap-4 sm:gap-6">
-          <Link
-            className="text-md font-medium hover:underline web:underline-offset-4"
-            href="#"
-          >
-            About
-          </Link>
-          <Link
-            className="text-md font-medium hover:underline web:underline-offset-4"
-            href="#"
-          >
-            Product
-          </Link>
-          <Link
-            className="text-md font-medium hover:underline web:underline-offset-4"
-            href="#"
-          >
-            Pricing
-          </Link>
-        </View>
-      </View>
-    </View>
-  );
-}
-
-function Footer() {
-  const { bottom } = useSafeAreaInsets();
-  return (
-    <View
-      className="flex shrink-0 bg-gray-100 native:hidden"
-      style={{ paddingBottom: bottom }}
-    >
-      <View className="py-6 flex-1 items-start px-4 md:px-6 ">
-        <Text className={"text-center text-gray-700"}>
-          © {new Date().getFullYear()} Me
-        </Text>
-      </View>
-    </View>
-  );
+                <View className='flex h-full justify-center p-8 gap-8'>
+                    <Image source={require('../assets/images/logo.png')} width={80} height={69} className='mx-auto' />
+                    <Text className='text-xl text-center font-medium '>
+                        Sign up for New Account
+                    </Text>
+                    <View className='border border-gray-300 rounded-xl overflow-hidden'>
+                        <View className='relative flex flex-row border-b border-gray-300'>
+                            <TextInput className='h-16 w-full pl-16' placeholder='Full Name' placeholderTextColor={colors.gray[500]} />
+                            <Feather name="user" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
+                        </View>
+                        <View className='relative flex flex-row border-b border-gray-300'>
+                            <TextInput className='h-16 w-full pl-16' placeholder='Email Address' placeholderTextColor={colors.gray[500]} />
+                            <Feather name="mail" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
+                        </View>
+                        <View className='relative flex flex-row border-b border-gray-300'>
+                            <TextInput className='h-16 w-full pl-16' placeholder='Phone Number' placeholderTextColor={colors.gray[500]} />
+                            <Feather name="phone" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
+                        </View>
+                        <View className='relative flex flex-row border-b border-gray-300'>
+                            <TextInput className='h-16 w-full pl-16' placeholder='Password' placeholderTextColor={colors.gray[500]} />
+                            <Feather name="lock" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
+                        </View>
+                        <View className='relative flex flex-row'>
+                            <TextInput className='h-16 w-full pl-16' placeholder='Retype Password' placeholderTextColor={colors.gray[500]} />
+                            <Feather name="check" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
+                        </View>
+                    </View>
+                    <Link href="/farms" asChild>
+                        <Pressable className='flex items-center justify-center bg-teal-500 p-4 rounded-xl'>
+                            <Text className='text-white font-medium'>
+                                Sign Up
+                            </Text>
+                        </Pressable>
+                    </Link>
+                    <Text className='text-center'>Or continue with</Text>
+                    <View className='flex flex-row  gap-4'>
+                        <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
+                            <Ionicons name="logo-google" size={20} color={colors.gray[500]} />
+                            <Text className=' font-medium'>
+                                Sign Up
+                            </Text>
+                        </Pressable>
+                        <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
+                            <Ionicons name="logo-apple" size={20} color={colors.gray[500]} />
+                            <Text className=' font-medium'>
+                                Apple Sign Up
+                            </Text>
+                        </Pressable>
+                    </View>
+                    <Pressable className='flex flex-row gap-2 justify-center'>
+                        <Text>Already have an account?</Text>
+                        <Text className='text-teal-500'>Sign In</Text>
+                    </Pressable>
+                </View>
+            </TouchableWithoutFeedback>
+        </Screen>
+    );
 }
