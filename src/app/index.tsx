@@ -29,11 +29,11 @@ export default function Page() {
                             <Feather name="phone" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
                         </View>
                         <View className='relative flex flex-row border-b border-gray-300'>
-                            <TextInput className='h-16 w-full pl-16' placeholder='Password' placeholderTextColor={colors.gray[500]} />
+                            <TextInput className='h-16 w-full pl-16' placeholder='Password' secureTextEntry placeholderTextColor={colors.gray[500]} />
                             <Feather name="lock" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
                         </View>
                         <View className='relative flex flex-row'>
-                            <TextInput className='h-16 w-full pl-16' placeholder='Retype Password' placeholderTextColor={colors.gray[500]} />
+                            <TextInput className='h-16 w-full pl-16' placeholder='Retype Password' secureTextEntry placeholderTextColor={colors.gray[500]} />
                             <Feather name="check" size={20} color={colors.gray[500]} className='absolute top-5 left-5' />
                         </View>
                     </View>
@@ -46,25 +46,31 @@ export default function Page() {
                     </Link>
                     <Text className='text-center'>Or continue with</Text>
                     <View className='flex flex-row  gap-4'>
-                        <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
-                            <Ionicons name="logo-google" size={20} color={colors.gray[500]} />
-                            <Text className=' font-medium'>
-                                Sign Up
-                            </Text>
-                        </Pressable>
-                        <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
-                            <Ionicons name="logo-apple" size={20} color={colors.gray[500]} />
-                            <Text className=' font-medium'>
-                                Apple Sign Up
-                            </Text>
-                        </Pressable>
+                        <Link href="/farms" asChild>
+                            <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
+                                <Ionicons name="logo-google" size={20} color={colors.gray[500]} />
+                                <Text className=' font-medium'>
+                                    Sign Up
+                                </Text>
+                            </Pressable>
+                        </Link>
+                        <Link href="/farms" asChild>
+                            <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
+                                <Ionicons name="logo-apple" size={20} color={colors.gray[500]} />
+                                <Text className=' font-medium'>
+                                    Apple Sign Up
+                                </Text>
+                            </Pressable>
+                        </Link>
                     </View>
-                    <Pressable className='flex flex-row gap-2 justify-center'>
-                        <Text>Already have an account?</Text>
-                        <Text className='text-teal-500'>Sign In</Text>
-                    </Pressable>
-                </View>
-            </TouchableWithoutFeedback>
-        </Screen>
+                    <Link href="/farms" asChild>
+                        <Pressable className='flex flex-row gap-2 justify-center'>
+                            <Text>Already have an account?</Text>
+                            <Text className='text-teal-500'>Sign In</Text>
+                        </Pressable>
+                    </Link>
+                </View >
+            </TouchableWithoutFeedback >
+        </Screen >
     );
 }
