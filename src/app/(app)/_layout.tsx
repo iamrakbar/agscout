@@ -1,12 +1,8 @@
-
-import { Link, Slot } from "expo-router";
 import { Tabs } from 'expo-router/tabs';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import colors from "tailwindcss/colors";
 import { Pressable, View } from "react-native";
-
-
 
 export default function AppLayout() {
 

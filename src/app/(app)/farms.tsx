@@ -5,8 +5,6 @@ import { Feather } from '@expo/vector-icons';
 import colors from 'tailwindcss/colors';
 import Screen from '@/components/screen'
 
-import { FlashList } from "@shopify/flash-list";
-
 const DATA = [...Array(10).keys()];
 
 const Farms = () => {
