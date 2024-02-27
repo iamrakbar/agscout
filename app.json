@@ -16,6 +16,10 @@
       ]
     ],
     "name": "agscout",
-    "slug": "agscout"
+    "slug": "agscout",
+    "splash": {
+        "image": "./assets/splash.png",
+        "backgroundColor": "#FFFFFF"
+    }
   }
 }

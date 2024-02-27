@@ -38,7 +38,7 @@ export default function Page() {
                         </View>
                     </View>
                     <Link href="/farms" asChild>
-                        <Pressable className='flex items-center justify-center bg-teal-500 p-4 rounded-xl'>
+                        <Pressable className='flex items-center justify-center bg-teal-500 p-4 rounded-xl active:opacity-70'>
                             <Text className='text-white font-medium'>
                                 Sign Up
                             </Text>
@@ -47,7 +47,7 @@ export default function Page() {
                     <Text className='text-center'>Or continue with</Text>
                     <View className='flex flex-row  gap-4'>
                         <Link href="/farms" asChild>
-                            <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
+                            <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl active:opacity-70'>
                                 <Ionicons name="logo-google" size={20} color={colors.gray[500]} />
                                 <Text className=' font-medium'>
                                     Sign Up
@@ -55,7 +55,7 @@ export default function Page() {
                             </Pressable>
                         </Link>
                         <Link href="/farms" asChild>
-                            <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl'>
+                            <Pressable className='flex-1 flex flex-row items-center justify-center gap-2 border border-gray-300 p-4 rounded-xl active:opacity-70'>
                                 <Ionicons name="logo-apple" size={20} color={colors.gray[500]} />
                                 <Text className=' font-medium'>
                                     Apple Sign Up
@@ -64,7 +64,7 @@ export default function Page() {
                         </Link>
                     </View>
                     <Link href="/farms" asChild>
-                        <Pressable className='flex flex-row gap-2 justify-center'>
+                        <Pressable className='flex flex-row gap-2 justify-center active:opacity-70'>
                             <Text>Already have an account?</Text>
                             <Text className='text-teal-500'>Sign In</Text>
                         </Pressable>

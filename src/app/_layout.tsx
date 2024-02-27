@@ -26,13 +26,13 @@ export default function Layout() {
             // When all loading is setup, unmount the splash screen component.
             SplashScreen.hideAsync();
             setReady(true);
-        }, 1000);
+        }, 300);
     }, []);
 
     return (
         <ThemeProvider value={MyTheme}>
-            <StatusBar style="dark" />
             <SafeAreaProvider>
+                <StatusBar style="dark" />
                 <Slot />
             </SafeAreaProvider >
         </ThemeProvider>
